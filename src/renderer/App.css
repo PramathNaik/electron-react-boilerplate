@@ -6,57 +6,95 @@ body {
   position: relative;
   color: white;
   height: 100vh;
-  background: linear-gradient(
-    200.96deg,
-    #fedc2a -29.09%,
-    #dd5789 51.77%,
-    #7a2c9e 129.35%
-  );
+  background: #DEDFE2;
   font-family: sans-serif;
-  overflow-y: hidden;
-  display: flex;
+  overflow: hidden;
+
+}
+
+.logo{
+  width: 150px;
+}
+
+.container {
+  margin: 2% !important;
+  background: #E8E9E9 !important;
+}
+
+.inLineImage{
+  width: 150px;
+}
+
+.uk-input{
+  padding: 5px !important;
+  margin: 2px !important;
+  background-color: rgba(208, 209, 212, 1);
+}
+.loginContainer{
   justify-content: center;
   align-items: center;
 }
 
-button {
-  background-color: white;
-  padding: 10px 20px;
-  border-radius: 10px;
-  border: none;
-  appearance: none;
-  font-size: 1.3rem;
-  box-shadow: 0px 8px 28px -6px rgba(24, 39, 75, 0.12),
-    0px 18px 88px -4px rgba(24, 39, 75, 0.14);
-  transition: all ease-in 0.1s;
+.collegeNameLogin{
+  align-items: center;
+  justify-content: center;
+}
+
+.loginText{
+  border-radius: 5% !important;
+  stroke: 5px;
+}
+
+.sidemenu{
+  background: #BFBFC8 !important  ;
+  margin: 0% !important;
+
+}
+.marginZero{
+  padding-top : 0% !important;
+  padding-bottom: 0% !important;
+}
+
+span{
+  vertical-align: top !important;
+}
+
+.sideMenuBar{
+  margin-top: 25px !important;
+}
+
+li{
+  font-size: 18px !important;
+  font-weight: bold;
+  margin-top: 5% !important;
+  margin-bottom: 5% !important;
+  margin-left: 0% !important;
+  padding: 3% !important;
   cursor: pointer;
-  opacity: 0.9;
+  color: black !important;
 }
 
-button:hover {
-  transform: scale(1.05);
-  opacity: 1;
+.black{
+  color: black !important;
+}
+.secondMenu{
+  margin-top: 125px !important;
 }
 
-li {
-  list-style: none;
+.uk-active{
+  background: white !important;
+  padding: 3% !important;
+  margin-left: 0% !important;
 }
 
-a {
-  text-decoration: none;
-  height: fit-content;
-  width: fit-content;
-  margin: 10px;
+.ctrls{
+  text-align: right;
+
 }
 
-a:hover {
-  opacity: 1;
-  text-decoration: none;
-}
-
-.Hello {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 20px 0;
+.ctrlIcon{
+  align-items: end !important;
+  margin: 0% !important;
+  padding: 0% !important;
+  stroke: 0px !important;
 }
