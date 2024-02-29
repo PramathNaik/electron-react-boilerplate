@@ -7,11 +7,23 @@ import UIkit from 'uikit';
 import logo from '../../assets/logo.png';
 import { LoginPage } from './resources/pages/LoginPage';
 import { DashBase } from './resources/dashboard/DashBase';
+import { SettingsBase } from './resources/dashboard/settings/SettingsBase';
 
 // Import Google icons
 
 export default function App() {
 
+  const handleClose = () => {
+    window.electron.ipcRenderer.sendMessage('ipc-example', ['close-window']);
+  };
+
+  const handleMinimize = () => {
+    window.electron.ipcRenderer.sendMessage('ipc-example', ['minimize-window']);
+  };
+
+  const handleMax = () => {
+    window.electron.ipcRenderer.sendMessage('ipc-example', ['max-window']);
+  };
 return (
 <>
   <nav className="uk-navbar-container">
@@ -33,23 +45,8 @@ return (
 
           </ul>
           <div className="uk-navbar-right ctrls">
-              {/* Add buttons with Google icons */}
-              <button className="ctrlIcon" title="Minimize">
-                <span className="material-symbols-outlined">
-                  minimize
-                </span>
-              </button>
-              <button className="ctrlIcon" title="Maximize">
-                <span className="material-symbols-outlined">
-                  north_east
-                </span>
-              </button>
-              <button className="ctrlIcon" title="Close">
-                <span className="material-symbols-outlined">
-                  close
-                </span>
-              </button>
-            </div>
+
+          </div>
         </div>
 
       </div>
@@ -59,6 +56,7 @@ return (
     <Routes>
       <Route path="/" element={<RegisterPage />} />
       <Route path="/login" element={<LoginPage />} />
+      <Route path="/settings/*" element={<SettingsBase />} />
       <Route path="/dashboard/*" element={<DashBase />} />
     </Routes>
   </Router>

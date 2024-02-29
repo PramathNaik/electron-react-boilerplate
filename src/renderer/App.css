@@ -48,6 +48,8 @@ body {
 .sidemenu{
   background: #BFBFC8 !important  ;
   margin: 0% !important;
+  padding-left: 0% !important;
+
 
 }
 .marginZero{
@@ -60,12 +62,15 @@ span{
 }
 
 .sideMenuBar{
-  margin-top: 25px !important;
+  margin-top: 5% !important;
+  margin: 0% !important;
+}
+.sideMenuBar li{
+  margin: 3% !important;
 }
 
 li{
   font-size: 18px !important;
-  font-weight: bold;
   margin-top: 5% !important;
   margin-bottom: 5% !important;
   margin-left: 0% !important;
@@ -85,6 +90,7 @@ li{
   background: white !important;
   padding: 3% !important;
   margin-left: 0% !important;
+
 }
 
 .ctrls{
@@ -97,4 +103,94 @@ li{
   margin: 0% !important;
   padding: 0% !important;
   stroke: 0px !important;
+}
+
+.statusMsg{
+  font-size: 12px !important;
+  font-style: italic;
+}
+
+.uk-card{
+  stroke: black;
+  stroke-width: 2px;
+}
+
+.statusBarPadding{
+  padding: 15px !important;
+}
+
+.uiTabs li {
+  margin: 0% !important;
+  padding: 0px !important;
+}
+
+.uiTabs a {
+  font-size: 10px !important;
+}
+
+.uk-button-primary{
+  background-color: #b1b4b5FF !important;
+  padding-inline: 2% !important;
+
+}
+
+.uk-switcher li{
+  background-color: #E8E9E9 !important;
+  justify-content: center ;
+  padding: 0% !important;
+  margin: 0% !important ;
+}
+
+.uk-switcher ul{
+  padding: 0% !important;
+  margin: 0% !important ;
+}
+
+th{
+  font-weight: bold !important;
+}
+
+.uk-table td {
+  padding: 0% !important;
+}
+
+.create div{
+  font-size: 12px !important;
+  color: red;
+  text-decoration: underline;
+}
+.create1 div{
+  font-size: 14px !important;
+
+}
+
+.linker{
+  font-size: 12px !important;
+  color: red;
+  text-decoration: underline;
+}
+
+.search{
+  border-radius: 25px !important;
+}
+
+.cre{
+  padding: 2% !important;
+  padding-inline: 9px !important;
+  font-size: 12px !important;
+  border-radius: 15px !important;
+  color: black !important;
+}
+
+table {
+  padding: 0% !important;
+  margin: 0% !important;
+}
+
+nav{
+  -webkit-app-region: drag;
+}
+.ctrlIcon {
+  z-index: 50;
+
 }

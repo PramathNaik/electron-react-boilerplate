@@ -29,6 +29,19 @@ ipcMain.on('ipc-example', async (event, arg) => {
   const msgTemplate = (pingPong: string) => `IPC test: ${pingPong}`;
   console.log(msgTemplate(arg));
   event.reply('ipc-example', msgTemplate('pong'));
+  console.log(arg)
+  if(arg[0] === "close-window"){
+    mainWindow?.close()
+    console.log("hello");
+  }else if (arg[0]=="minimize-window"){
+    mainWindow?.minimize();
+  } else if (arg[0]=="max-window"){
+    if (mainWindow?.isMaximized()) {
+      mainWindow.restore();
+    }else{
+      mainWindow?.maximize();
+    }
+  }
 });
 
 if (process.env.NODE_ENV === 'production') {
@@ -73,9 +86,13 @@ const createWindow = async () => {
     show: false,
     width: 1024,
     height: 728,
-    frame: false,
-    icon: getAssetPath('icon.png'),
+    frame: true,
+    maximizable: true,
+    minimizable:true,
+    autoHideMenuBar: true,
+    icon: getAssetPath('icon_1.png'),
     webPreferences: {
+
       preload: app.isPackaged
         ? path.join(__dirname, 'preload.js')
         : path.join(__dirname, '../../.erb/dll/preload.js'),
@@ -83,6 +100,8 @@ const createWindow = async () => {
   });
 
   mainWindow.loadURL(resolveHtmlPath('index.html'));
+  mainWindow.setMenu(null);
+  mainWindow.removeMenu();
 
   mainWindow.on('ready-to-show', () => {
     if (!mainWindow) {
@@ -98,6 +117,10 @@ const createWindow = async () => {
   mainWindow.on('closed', () => {
     mainWindow = null;
   });
+
+  ipcMain.on('close-window', (event) => {
+    mainWindow?.close();
+  })
 
   const menuBuilder = new MenuBuilder(mainWindow);
   menuBuilder.buildMenu();
