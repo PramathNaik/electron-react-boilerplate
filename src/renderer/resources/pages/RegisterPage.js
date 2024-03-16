@@ -3,7 +3,7 @@ import 'uikit/dist/css/uikit.min.css';
 import UIkit from 'uikit';
 import '../../App.css';
 import logo from '../../../../assets/logo.png';
-import { Link } from 'react-router-dom';
+import { Link, useActionData } from 'react-router-dom';
 import { baseUrl } from '../../scripts/AuthProvider';
 
 
@@ -67,14 +67,14 @@ return (
     continue!</p>
   <div data-uk-grid>
     <div className="uk-width-1-2@s">
-      <input className="uk-input" value={formData.organizationName} onChange={handleChange} placeholder='Organization Name' type="text"></input>
+      <input className="uk-input" value={formData.organizationName}  placeholder='Organization Name' type="text"></input>
       <input className="uk-input" value={formData.specialization} onChange={handleChange} placeholder='Specialization' type="text"></input>
       <div data-uk-grid>
         <div className="uk-width-1-2@s">
           <input className="uk-input" value={formData.registrationNo} onChange={handleChange} type="text" placeholder="Registeration No" aria-label="50"></input>
         </div>
         <div className="uk-width-1-2@s">
-          <input className="uk-text" type="date" uk-datepicker="{format:'DD.MM.YYYY'}" value={formData.estd} onChange={handleChange} placeholder="ESTD in" aria-label="50"></input>
+          <input className="uk-input" type="date"  value={formData.estd} onChange={handleChange} placeholder="ESTD in" aria-label="50"></input>
         </div>
       </div>
       <input className="uk-input" placeholder='Address' value={formData.address} onChange={handleChange} type="text"></input>
@@ -97,13 +97,13 @@ return (
       <h3>Already User?<Link to={"/login"}> Login Here</Link></h3>
     </div>
     <div className="uk-width-1-2@s">
-      <input className="uk-input" placeholder='Administrator Email' type="text"></input>
-      <input className="uk-input" placeholder='Administrator Username' type="text"></input>
-      <input className="uk-input" placeholder='Create Password' type="password"></input>
-      <input className="uk-input" placeholder='Confirm Password' type="password"></input>
-      <div><input className="uk-checkbox" type="checkbox"></input>   By clicking this, I agree to the Terms and Conditions</div>
+      <input className="uk-input" placeholder='Administrator Email' value={userLogin.email} type="text"></input>
+      <input className="uk-input" placeholder='Administrator Username' value={userLogin.username} type="text"></input>
+      <input className="uk-input" placeholder='Create Password' value={userLogin.password} type="password"></input>
+      <input className="uk-input" placeholder='Confirm Password'  type="password"></input>
+      <div className='uk-margin-top'><input className="uk-checkbox"  type="checkbox"></input>   By clicking this, I agree to the Terms and Conditions</div>
       <div>
-      <Link to={'/login'}  className="uk-button uk-button-primary">Sign in</Link></div>
+      <Link to={'/login'}  className="uk-button uk-margin-top uk-button-primary">Sign in</Link></div>
       </div>
   </div>
 </div>

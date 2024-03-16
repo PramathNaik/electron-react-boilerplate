@@ -22,8 +22,10 @@ export const LoginPage = () => {
     event.preventDefault(); // Prevent default form submission
     try {
       const response = await login(username, password);
-      if (response && response.key) {
-        localStorage.setItem('authToken', response.key);
+      if (response && response.access) {
+        localStorage.setItem('access', response.access);
+        localStorage.setItem('refresh', response.refresh);
+
         history('/dashboard')
         // Redirect or perform other actions upon successful login
       } else {
